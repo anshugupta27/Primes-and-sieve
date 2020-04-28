@@ -1,0 +1,40 @@
+https://practice.geeksforgeeks.org/problems/sum-of-primes/0#ExpectOP
+
+
+
+
+#include<bits/stdc++.h>
+#define int long long int 
+#define TRY_HARD ios_base::sync_with_stdio(false);  cin.tie(NULL);  cout.tie(NULL);
+using namespace std;
+signed main()
+ {
+	TRY_HARD ;
+	int t ;
+	cin >> t ;
+	while ( t-- )
+	{
+	    string s ;
+	    int sum = 0 ;
+	    cin >> s ;
+	    for ( int i = 0 ; i < s.length() ; i++ )
+	    {
+	        int r = s[i] - '0' , flag = 1 ;
+	        if ( r > 1 )
+	        {
+	        for ( int j = 2 ; j * j <= r ; j++ )
+	        {
+	            if ( r % j == 0 )
+	            {
+	                flag = 0 ;
+	                break ;
+	            }
+	        }
+	        if ( flag == 1 )
+	        sum = sum + r ;
+	        }
+	        
+	    }
+	    cout << sum << endl ;
+	}
+}
